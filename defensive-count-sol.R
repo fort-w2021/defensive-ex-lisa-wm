@@ -1,5 +1,8 @@
 # QUESTIONS
 
+# Is '::' really preferable to library statements if a package is extensively
+# used in a script?
+
 # PREREQUISITES ----------------------------------------------------------------
 
 library(here)
