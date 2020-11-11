@@ -42,3 +42,6 @@ vignettes/*.pdf
 # RMD output
 .html
 .HTML
+
+# Mysterious folder
+_snaps/
