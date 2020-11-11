@@ -34,12 +34,12 @@ test_that("behaves identically for equivalent inputs", {
 test_that("behaves sensibly for empty inputs", {
   expect_warning(col_means(mtcars[, 0]))
   expect_warning(col_means(mtcars[0, ]))
-  expect_data_frame(col_means(mtcars[, 0]),
-                    max.rows = 0, max.cols = 0)
-  expect_data_frame(col_means(mtcars[0, ]),
-                    max.rows = 0, max.cols = 0)
-  expect_equal(col_means(mtcars[, 0]),
-               col_means(mtcars[0, ]))
+  suppressWarnings(expect_data_frame(col_means(mtcars[, 0]),
+                                     max.rows = 0, max.cols = 0))
+  suppressWarnings(expect_data_frame(col_means(mtcars[0, ]),
+                                     max.rows = 0, max.cols = 0))
+  suppressWarnings(expect_equal(col_means(mtcars[, 0]),
+                                col_means(mtcars[0, ])))
 })
 
 test_that("deals with missings", {
@@ -69,8 +69,8 @@ test_that("deals with factors, characters", {
   expect_equal(col_means(mtcars)[, -11],
                col_means(mtcars_fct))
   expect_warning(col_means(mtcars_fct[, "carb", drop = FALSE]))
-  expect_equal(col_means(mtcars[, 0]),
-               col_means(mtcars_fct[, "carb", drop = FALSE]))
+  suppressWarnings(expect_equal(col_means(mtcars[, 0]),
+                                col_means(mtcars_fct[, "carb", drop = FALSE])))
 })
 
 #extra bonus:
