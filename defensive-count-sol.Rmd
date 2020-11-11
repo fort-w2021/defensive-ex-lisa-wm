@@ -1,0 +1,10 @@
+ *Cunts & Dudes*
+
+a) Identifizieren Sie möglichst viele der hier getroffenen *impliziten* Annahmen über das Objekt `supposedly_a_count`. (Am besten: *bevor* Sie sich die entsprechenden Tests im mitgelieferten Testfile anschauen.)
+
+*Annahmen*
+supposedly_a_count ist
+- numerisch
+- nicht-negativ
+- einelementig
+- nicht Inf oder NA
