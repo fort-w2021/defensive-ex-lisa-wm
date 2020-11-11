@@ -9,10 +9,6 @@ test_that("does the right thing for sensible inputs", {
 })
 
 test_that("does the right thing for problematic inputs", {
-  # add the missing "regexp" arguments to test that
-  # these trigger *informative* error messages
-  # (i.e., errors that don't come from <round()>,
-  # but from your own input checks, preferably.)
   expect_error(count_them(-1.1), "negative")
   expect_error(count_them(c(1.1, 2)), "length")
   expect_error(count_them(NA_real_), "NA")
