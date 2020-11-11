@@ -1,5 +1,3 @@
-library(testthat)
-
 context("checking count_them")
 
 test_that("does the right thing for sensible inputs", {
@@ -15,11 +13,11 @@ test_that("does the right thing for problematic inputs", {
   # these trigger *informative* error messages
   # (i.e., errors that don't come from <round()>,
   # but from your own input checks, preferably.)
-  expect_error(count_them(-1.1))
-  expect_error(count_them(c(1.1, 2)))
-  expect_error(count_them(NA_real_))
-  expect_error(count_them(NA))
-  expect_error(count_them(Inf))
-  expect_error(count_them("a"))
-  expect_error(count_them(list("a","b", 20)))
+  expect_error(count_them(-1.1), "negative")
+  expect_error(count_them(c(1.1, 2)), "length")
+  expect_error(count_them(NA_real_), "NA")
+  expect_error(count_them(NA), "NA")
+  expect_error(count_them(Inf), "finite")
+  expect_error(count_them("a"), "numeric")
+  expect_error(count_them(list("a","b", 20)), "length")
 })
